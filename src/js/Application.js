@@ -7,10 +7,8 @@ export default class Application extends EventEmitter {
       READY: "ready",
     };
   }
-
   constructor() {
     super();
-
     const box = document.createElement("div");
     box.classList.add("box");
     box.innerHTML = this._render({
@@ -18,12 +16,9 @@ export default class Application extends EventEmitter {
       terrain: "placeholder",
       population: 0,
     });
-
     document.body.querySelector(".main").appendChild(box);
-
     this.emit(Application.events.READY);
   }
-
   _render({ name, terrain, population }) {
     return `
 <article class="media">
